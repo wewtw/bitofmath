@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Bit of math site
+    </title>
+
+</head>
+
+<body>
+    <div>
+        <form id="put">
+            <input id="numb" type="number">
+            <button id="btn" form="sub" type="submit">submit</button>
+
+        </form>
+        <div id="results"></div>
+    </div>
+
+
+    <div>
+        <script>
+        //moake it so it shows the fnumber and the sonumbers in the array.
+        //make it so it remmebers the prev results in an array and goes back with prev button
+        //make it so its in the middle
+        
+        var numb = document.getElementById('numb');
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            var n = numb.value;
+            var tell = (n) =>{
+                var seq = [0, 1]
+                for (let i = 2; i < n; i++) {
+                seq[i] = seq[i - 1] + seq[i - 2]
+            }
+            return seq;
+
+            }
+        
+            var host = document.getElementById('results');
+            host.innerHTML = `<h2 class="fibsSeqResult">Fibonacci Sequence</h2><br>${tell(n)}`;
+        });
+
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
